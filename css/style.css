@@ -1,0 +1,173 @@
+/* open-sans-300 - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/open-sans-v29-latin-300.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/open-sans-v29-latin-300.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/open-sans-v29-latin-300.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/open-sans-v29-latin-300.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/open-sans-v29-latin-300.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/open-sans-v29-latin-300.svg#OpenSans') format('svg');
+    /* Legacy iOS */
+}
+
+/* poppins-regular - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/poppins-v20-latin-regular.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/poppins-v20-latin-regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/poppins-v20-latin-regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/poppins-v20-latin-regular.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/poppins-v20-latin-regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/poppins-v20-latin-regular.svg#Poppins') format('svg');
+    /* Legacy iOS */
+}
+
+/* poppins-500 - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/poppins-v20-latin-500.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/poppins-v20-latin-500.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/poppins-v20-latin-500.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/poppins-v20-latin-500.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/poppins-v20-latin-500.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/poppins-v20-latin-500.svg#Poppins') format('svg');
+    /* Legacy iOS */
+}
+
+/* poppins-600 - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/poppins-v20-latin-600.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/poppins-v20-latin-600.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/poppins-v20-latin-600.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/poppins-v20-latin-600.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/poppins-v20-latin-600.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/poppins-v20-latin-600.svg#Poppins') format('svg');
+    /* Legacy iOS */
+}
+
+/* poppins-700 - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/poppins-v20-latin-700.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/poppins-v20-latin-700.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/poppins-v20-latin-700.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/poppins-v20-latin-700.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/poppins-v20-latin-700.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/poppins-v20-latin-700.svg#Poppins') format('svg');
+    /* Legacy iOS */
+}
+
+/* ------------------------------------------------------------------------------
+                                Custom Default CSS
+-------------------------------------------------------------------------------*/
+:root {
+    --theme-bg: #1cb9c8;
+    --text-white: #fff;
+    --theme-light: #f7f7f7;
+    --text-dark: #333333;
+}
+
+body {
+    color: #666666;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #232323;
+}
+
+.bg-theme {
+    background-color: var(--theme-bg);
+}
+
+.bg-light {
+    background-color: var(--theme-light);
+}
+
+
+/* ---------------------------------------------------------------------------
+                                Header Section CSS
+----------------------------------------------------------------------------*/
+.header-top {
+    /* padding: 10px 0; */
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.add_info li {
+    padding: 10px;
+}
+
+
+@media screen and (min-width: 992px) {
+    .add_info li+li {
+        border-left: 1px solid #e7e7e7;
+    }
+}
+
+
+
+.main
+{
+    width: 100%;
+    background-color: #1cb9c8;
+    padding: 30px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main > div
+{
+    color: red;
+}
+
+.fixed
+{
+    position: fixed;
+    width: 100%;
+    background-color: #666666;
+}
