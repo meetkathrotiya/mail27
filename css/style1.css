@@ -1124,7 +1124,8 @@ body {
 }
 
 .catlog_btn:hover {
-    background-color: white;
+    background-color: transparent;
+    border: 2px solid white;
     transition: 0.3s;
 }
 
@@ -1136,7 +1137,7 @@ body {
 }
 
 .catlog_btn:hover a {
-    color: var(--font-color);
+    color: white;
     transition: 0.3s;
 }
 
@@ -4066,8 +4067,9 @@ label span {
 }
 
 .cont-sec-button1:hover {
-    background-color: #2f3134;
-    transition: 0.3s;
+    background-color: transparent;
+    border: 1px solid white;
+    /* transition: 0.3s; */
 }
 
 .cont-icn-main {

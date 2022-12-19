@@ -98,9 +98,9 @@ $(document).ready(function () {
             $('.toggle i').toggleClass('fa-bars fa-times')
         })
 
-        $('.mob_main_menu > li > a').click(function () {
-            $(this).next('.mob_sub_menu').slideToggle()
-        })
+        // $('.mob_main_menu > li > a').click(function () {
+        //     $(this).next('.mob_sub_menu').slideToggle()
+        // })
     })
 
     $(document).ready(function () {
