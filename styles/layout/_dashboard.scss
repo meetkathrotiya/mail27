@@ -1,12 +1,5 @@
-/********Theme Colors************/
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap");
-.content-wrapper {
-  flex-grow: 1;
-  width: fit-content;
-  overflow-x: auto;
-}
-
 /******Font Family*****/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap");
 /******** Global css Start**********/
 *,
 *::before,
@@ -36,23 +29,18 @@ body {
   overflow-x: hidden;
   position: relative;
 }
-
-.dark body {
-  color: #ffffff;
+.dark {
+  body {
+    color: #ffffff;
+  }
 }
-
 h6,
-.h6,
 h5,
 h5,
 h4,
-.h4,
 h3,
-.h3,
 h2,
-.h2,
-h1,
-.h1 {
+h1 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 400;
@@ -99,7 +87,6 @@ button:focus,
 button:focus-visible {
   outline: 0;
 }
-
 textarea:focus-visible,
 input:focus-visible {
   outline: none;
@@ -109,74 +96,87 @@ input:focus-visible {
 .custom-scrollbar::-webkit-scrollbar {
   width: 2px;
 }
-
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.0509803922);
+  background: #0000000d;
 }
-
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(175, 175, 175, 0.8666666667);
+  background: #afafafdd;
 }
-
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.4);
+  background: #00000066;
 }
 
 .dark .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.3137254902);
+  background: #ffffff50;
 }
 
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.8666666667);
+  background: #ffffffdd;
 }
-
 /*****Scrollbar css End*****/
+
 /********** Global css End************/
+
+//******* Dashboard css Start*******/
 .dot-active {
   position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background: #1c1c1c;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 80px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
 }
-.dot-active::before {
-  content: "";
-  position: absolute;
-  background: #1c1c1c;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 5px;
-  width: 6px;
-  height: 6px;
-  border-radius: 80px;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-}
-
-.dark .dot-active::before {
-  background: #ffffff;
-}
-
-.heading-border::before {
-  content: "";
-  width: 1px;
-  background: linear-gradient(339deg, rgb(239, 239, 239) 0%, rgb(237, 237, 237) 35%, rgb(248, 248, 248) 100%);
+.dark .dot-active {
+  &::before {
+    background: #ffffff;
+  }
 }
 
-.dark .heading-border::before {
-  background: rgba(0, 0, 0, 0.1);
+.heading-border {
+  &::before {
+    content: "";
+    width: 1px;
+    background: linear-gradient(
+      339deg,
+      rgb(239 239 239) 0%,
+      rgb(237 237 237) 35%,
+      rgb(248 248 248) 100%
+    );
+  }
 }
-
+.dark {
+  .heading-border {
+    &::before {
+      background: linear-gradient(
+      339deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    }
+  }
+}
+//******* Dashboard css End*******/
 /********** checkbox css start ************/
 .styled-checkbox {
   position: absolute;
   opacity: 0;
 }
-
 .styled-checkbox + label {
   position: relative;
   cursor: pointer;
   padding: 0;
 }
-
 .styled-checkbox + label:before {
   content: "";
   margin-right: 10px;
@@ -191,19 +191,15 @@ input:focus-visible {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .dark .styled-checkbox + label:before {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgb(255 255 255 / 0.2);
 }
-
 .dark .styled-checkbox:checked + label:before {
   background: #c6c7f8;
 }
-
 .dark .passowordcheck .styled-checkbox:checked + label:before {
   background: #000;
 }
-
 .dark .passowordcheck .styled-checkbox + label:before {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -211,7 +207,6 @@ input:focus-visible {
 .styled-checkbox:checked + label:before {
   background: #000;
 }
-
 .styled-checkbox:checked + label:after {
   content: "";
   position: absolute;
@@ -220,26 +215,30 @@ input:focus-visible {
   background: white;
   width: 2px;
   height: 2px;
-  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
+    4px -6px 0 white, 4px -8px 0 white;
   transform: translateY(-50%) rotate(45deg);
 }
-
-.dark .styled-checkbox:checked + label:after {
-  background: black;
-  box-shadow: 2px 0 0 black, 4px 0 0 black, 4px -2px 0 black, 4px -4px 0 black, 4px -6px 0 black, 4px -8px 0 black;
-}
-.dark .passowordcheck .styled-checkbox:checked + label:after {
-  background: white;
-  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+.dark {
+  .styled-checkbox:checked + label:after {
+    background: black;
+    box-shadow: 2px 0 0 black, 4px 0 0 black, 4px -2px 0 black, 4px -4px 0 black,
+      4px -6px 0 black, 4px -8px 0 black;
+  }
+  .passowordcheck .styled-checkbox:checked + label:after {
+    background: white;
+    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
+      4px -6px 0 white, 4px -8px 0 white;
+  }
 }
 
 /********** checkbox css end ************/
+
 /********** Tabs css start ************/
 .react-tabs__tab-list {
   margin: 0 0 24px;
   padding: 0;
 }
-
 .tabs-main {
   display: inline-block;
   padding: 4px 8px;
@@ -248,24 +247,26 @@ input:focus-visible {
   transition: 0.3s;
   color: rgba(0, 0, 0, 0.4);
 }
-
 .tabs-main.selected {
   font-weight: 600;
   position: relative;
   color: #1c1c1c;
 }
-
-.dark .tabs-main.selected {
-  color: #fff;
+.dark {
+  .tabs-main.selected {
+    color: #fff;
+  }
 }
-
-.dark .tabs-main.selected::after {
-  background-color: #c6c7f8;
+.dark {
+  .tabs-main.selected {
+    &::after {
+      background-color: #c6c7f8;
+    }
+  }
+  .tabs-main {
+    color: rgba(255, 255, 255, 0.4);
+  }
 }
-.dark .tabs-main {
-  color: rgba(255, 255, 255, 0.4);
-}
-
 .tabs-main.selected::after {
   content: "";
   position: absolute;
@@ -278,33 +279,28 @@ input:focus-visible {
   opacity: 0;
   transition: 0.3s;
 }
-
 .tabs-main.selected::after {
   opacity: 1;
 }
-
-.tabs-main:focus {
-  outline: none;
+.tabs-main {
+  &:focus {
+    outline: none;
+  }
 }
-
 /* react-tabs */
 .react-tabs__tab-list {
   margin: 0 0 24px;
   padding: 0;
 }
-
 .dark .react-tabs__tab--selected::after {
   background-color: #c6c7f8;
 }
-
 .dark .react-tabs__tab.react-tabs__tab--selected {
   color: #c6c7f8;
 }
-
 .dark .react-tabs__tab {
   color: rgba(255, 255, 255, 0.4);
 }
-
 .react-tabs__tab {
   display: inline-block;
   padding: 4px 8px;
@@ -313,13 +309,11 @@ input:focus-visible {
   transition: 0.3s;
   color: rgba(0, 0, 0, 0.4);
 }
-
 .react-tabs__tab--selected {
   font-weight: 600;
   position: relative;
   color: #1c1c1c;
 }
-
 .react-tabs__tab--selected::after {
   content: "";
   position: absolute;
@@ -332,92 +326,92 @@ input:focus-visible {
   opacity: 0;
   transition: 0.3s;
 }
-
 .react-tabs__tab--selected::after {
   opacity: 1;
 }
-
 .react-tabs__tab:focus {
   outline: none;
 }
-
 .react-tabs__tab-panel {
   display: none;
 }
-
 .react-tabs__tab-panel--selected {
   display: block;
 }
-
 /********** Tabs css end ************/
 /********** input start ************/
-input[type=file] {
+input[type="file"] {
   display: none;
 }
-
-.fileUpload input{
-  font-size: 20px;
-  height: 50px;
-  appearance: none;
-  opacity: 0;
-  position: absolute;
-  width: 70px;
-  height: 70px;
-}
-
 /********** input end ************/
+
 /********** multiselect start ************/
-.multiselectitem .chip {
-  background-color: #e5ecf6 !important;
-  color: #1c1c1c !important;
-  gap: 0.25rem;
-  text-transform: initial;
-  border-radius: 4px !important;
-  font-size: 14px !important;
-  margin-bottom: 0 !important;
-  margin-right: 8px !important;
-  line-height: 20px;
-  padding: 0 6px 0 4px;
+.multiselectitem {
+  .chip {
+    background-color: #e5ecf6 !important;
+    color: #1c1c1c !important;
+    gap: 0.25rem;
+    text-transform: initial;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    margin-bottom: 0 !important;
+    margin-right: 8px !important;
+    line-height: 20px;
+    padding: 0 6px 0 4px;
+  }
 }
 
-.itemselect .chip {
-  background-color: #e3f5ff !important;
-  margin-top: 2px;
-  margin-bottom: 2px;
+.itemselect {
+  .chip {
+    background-color: #e3f5ff !important;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
 }
-
-.select-customer.itemselect .chip {
-  padding-top: 2px;
-  padding-bottom: 2px;
+.select-customer.itemselect {
+  .chip {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
 }
-
 .optionListContainer {
   top: 40px !important;
 }
-
-.dark .optionListContainer {
-  background-color: #000000;
+.dark {
+  .optionListContainer {
+    background-color: #000000;
+  }
 }
-
-.multiselectitem .search-wrapper {
-  border: none !important;
-  padding: 0 !important;
-  text-transform: capitalize;
+.multiselectitem {
+  .search-wrapper {
+    border: none !important;
+    padding: 0 !important;
+    text-transform: capitalize;
+  }
 }
-
-.multiselectitem .highlightOption {
-  background-color: var(--primary-purple) !important;
-  color: #1c1c1c !important;
+.multiselectitem {
+  .highlightOption {
+    background-color: var(--primary-purple) !important;
+    color: #1c1c1c !important;
+  }
 }
-
-.dark .multiselectitem .highlightOption {
-  background-color: var(--primary-purple) !important;
-  color: white !important;
+.dark {
+  .multiselectitem {
+    .highlightOption {
+      background-color: var(--primary-purple) !important;
+      color: white !important;
+    }
+  }
 }
-
-.multiselectitem .multiSelectContainer li:hover {
-  background-color: #e5ecf6 !important;
-  color: #1c1c1c !important;
+.multiselectitem {
+  .multiSelectContainer {
+    li {
+      &:hover {
+        background-color: #e5ecf6 !important;
+        color: #1c1c1c !important;
+      }
+    }
+  }
 }
 
 /********** multiselect end ************/
@@ -427,7 +421,6 @@ a:empty {
   font-size: 0;
   padding: 0;
 }
-
 /******* popup *******/
 .popup-staylemain {
   transform: translate(-50%, -50%);
@@ -447,18 +440,20 @@ a:empty {
   animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
-}
-.btn:hover {
-  animation-name: push;
-  animation-duration: 0.3s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
+  &:hover {
+    animation-name: push;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+  }
 }
 
-.datepicker-data input {
-  max-width: 532px;
-  width: 100%;
-  cursor: pointer;
+.datepicker-data {
+  input {
+    max-width: 532px;
+    width: 100%;
+    cursor: pointer;
+  }
 }
 
 .active-effect:active {
@@ -466,63 +461,66 @@ a:empty {
 }
 
 /******* input type number css start *******/
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   @apply appearance-none;
 }
-
 /******* input type number css end *******/
 .rdw-option-wrapper {
   background: transparent !important;
 }
-
-.dark .rdw-link-modal-btn:disabled,
-.dark .rdw-link-modal-btn,
-.dark .rdw-image-modal-btn,
-.dark .rdw-embedded-modal-btn-section {
-  color: #1c1c1c;
+.dark {
+  .rdw-link-modal-btn:disabled,
+  .rdw-link-modal-btn,
+  .rdw-image-modal-btn,
+  .rdw-embedded-modal-btn-section {
+    color: #1c1c1c;
+  }
+  .rdw-link-modal,
+  .rdw-image-modal,
+  .rdw-embedded-modal {
+    background: #1c1c1c;
+  }
+  .rdw-dropdown-carettoclose {
+    border-bottom-color: white;
+  }
+  .rdw-dropdown-carettoopen {
+    border-top: 6px solid white;
+  }
+  .rdw-dropdown-optionwrapper,
+  .rdw-dropdown-selectedtext {
+    img {
+      -webkit-filter: invert(100%);
+      filter: invert(100%);
+    }
+  }
+  .rdw-editor-toolbar {
+    .rdw-option-wrapper {
+      background: transparent;
+      img {
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+      }
+    }
+  }
+  .rdw-fontfamily-optionwrapper,
+  .rdw-dropdown-optionwrapper,
+  .rdw-block-dropdown .rdw-dropdown-optionwrapper:hover,
+  .rdw-dropdown-optionwrapper .rdw-dropdown-optionwrapper:hover {
+    background: #000 !important;
+  }
+  .rdw-dropdownoption-highlighted {
+    background-color: #ffffff0d;
+  }
+  .rdw-block-wrapper,
+  .rdw-fontfamily-wrapper,
+  .rdw-text-align-wrapper,
+  .rdw-embedded-wrapper,
+  .rdw-list-wrapper {
+    padding-right: 8px;
+    border-right: 1px solid #ffffff1a;
+  }
 }
-.dark .rdw-link-modal,
-.dark .rdw-image-modal,
-.dark .rdw-embedded-modal {
-  background: #1c1c1c;
-}
-.dark .rdw-dropdown-carettoclose {
-  border-bottom-color: white;
-}
-.dark .rdw-dropdown-carettoopen {
-  border-top: 6px solid white;
-}
-.dark .rdw-dropdown-optionwrapper img,
-.dark .rdw-dropdown-selectedtext img {
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
-}
-.dark .rdw-editor-toolbar .rdw-option-wrapper {
-  background: transparent;
-}
-.dark .rdw-editor-toolbar .rdw-option-wrapper img {
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
-}
-.dark .rdw-fontfamily-optionwrapper,
-.dark .rdw-dropdown-optionwrapper,
-.dark .rdw-block-dropdown .rdw-dropdown-optionwrapper:hover,
-.dark .rdw-dropdown-optionwrapper .rdw-dropdown-optionwrapper:hover {
-  background: #000 !important;
-}
-.dark .rdw-dropdownoption-highlighted {
-  background-color: rgba(255, 255, 255, 0.0509803922);
-}
-.dark .rdw-block-wrapper,
-.dark .rdw-fontfamily-wrapper,
-.dark .rdw-text-align-wrapper,
-.dark .rdw-embedded-wrapper,
-.dark .rdw-list-wrapper {
-  padding-right: 8px;
-  border-right: 1px solid rgba(255, 255, 255, 0.1019607843);
-}
-
 .rdw-block-wrapper,
 .rdw-fontfamily-wrapper,
 .rdw-text-align-wrapper,
@@ -531,7 +529,6 @@ input[type=number]::-webkit-outer-spin-button {
   padding-right: 8px;
   border-right: 1px solid #babfc3;
 }
-
 .rdw-block-dropdown,
 .rdw-fontfamily-dropdown,
 .rdw-text-align-dropdown,
@@ -539,25 +536,23 @@ input[type=number]::-webkit-outer-spin-button {
   border: 0 !important;
   background: transparent !important;
 }
-
 .rdw-option-wrapper {
   border: 0 !important;
 }
-
 .rdw-option-wrapper:hover,
 .rdw-dropdown-wrapper:hover,
 .rdw-option-active {
   box-shadow: none !important;
 }
-
 .rdw-fontfamily-dropdown {
   width: 70px;
 }
 
-.email-content .editorarea {
-  min-height: 275px;
+.email-content {
+  .editorarea {
+    min-height: 275px;
+  }
 }
-
 @media screen and (max-width: 575px) {
   .policies-textedit .rdw-image-modal,
   .rdw-embedded-modal {
@@ -574,47 +569,3 @@ input[type=number]::-webkit-outer-spin-button {
     left: -84px !important;
   }
 }
-.auth-bg {
-  background: radial-gradient(85.9% 85.9% at 82.11% 8.01%, #6EF195 25.79%, #00E3FD 100%), #F7F9FB;
-}
-
-.password-strength-bar div div {
-  height: 4px !important;
-  border-radius: 8px;
-}
-
-.otp-group {
-  display: flex;
-  width: 100%;
-  max-width: 410px;
-  column-gap: 10px;
-  gap: 10px;
-  justify-content: center;
-}
-
-.otp-input {
-  width: 58px;
-  height: 58px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  text-align: center;
-  font-size: 24px;
-  line-height: 36px;
-  font-weight: bold;
-  line-height: 1;
-  color: #1c1c1c;
-  background: #fff;
-}
-
-.custom-toggle {
-  transform: translate(-50%, -50%);
-}
-
-@media screen and (max-width: 450px) {
-  .otp-input {
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
-    gap: 5px;
-  }
-}/*# sourceMappingURL=style.css.map */
